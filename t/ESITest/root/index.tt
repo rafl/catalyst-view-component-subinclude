@@ -1,2 +1,2 @@
 ESI Test, will include /time_include<br/>
-[% esi_include('/time_include') %]
+[% subinclude('/time_include') %]

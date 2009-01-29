@@ -15,9 +15,6 @@ sub time_include : Local Args(0) {
     $c->stash->{current_time} = localtime();
 }
 
-sub end : ActionClass('RenderView') {
-    my ( $self, $c ) = @_;
-    $c->setup_esi;
-}
+sub end : ActionClass('RenderView') {}
 
 1;

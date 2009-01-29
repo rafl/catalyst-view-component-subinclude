@@ -11,7 +11,6 @@ use Catalyst qw/
     ConfigLoader
     Static::Simple
     SubRequest
-    ESI
 /;
 
 our $VERSION = '0.01';

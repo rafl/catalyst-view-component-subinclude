@@ -1,8 +1,9 @@
 package ESITest::View::TT;
+use Moose;
 
-use strict;
-use base 'Catalyst::View::TT';
+extends 'Catalyst::View::TT';
+with 'Catalyst::View::Component::SubInclude';
 
-__PACKAGE__->config(TEMPLATE_EXTENSION => '.tt');
+__PACKAGE__->config( TEMPLATE_EXTENSION => '.tt' );
 
 1;
