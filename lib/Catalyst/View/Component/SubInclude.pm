@@ -35,7 +35,7 @@ Then, somewhere in your templates:
 C<Catalyst::View::Component::SubInclude> allows you to include content in your
 templates (or, more generally, somewhere in your view's C<render> processing)
 which comes from another action in your application. It's implemented as a 
-L<Moose::Role>, so using L<Moose> in your view is required.
+L<Moose::Role|Moose::Role>, so using L<Moose|Moose> in your view is required.
 
 Simply put, it's a way to include the output of a Catalyst sub-request somewhere
 in your page. 
@@ -53,7 +53,8 @@ common use-case).
 
 =head2 C<subinclude( $path, @args )>
 
-This will return the body of the requested resource (as specified by C<$path>).
+This will render and return the body of the included resource (as specified by 
+C<$path>).
 
 =head1 SUBINCLUDE PLUGINS
 
@@ -108,7 +109,8 @@ around 'render' => sub {
 
 =head1 SEE ALSO
 
-L<Catalyst::Plugin::SubRequest>, L<Moose::Role>, L<Moose>,
+L<Catalyst::Plugin::SubRequest|Catalyst::Plugin::SubRequest>, 
+L<Moose::Role|Moose::Role>, L<Moose|Moose>,
 L<http://www.catalystframework.org/calendar/2008/17>
 
 =head1 BUGS
