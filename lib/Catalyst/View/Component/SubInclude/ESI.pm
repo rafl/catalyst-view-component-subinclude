@@ -37,14 +37,14 @@ Edge Side Includes (ESI) include directives. This is a feature implemented by
 Varnish (L<http://varnish.projects.linpro.no/>) which allows cache-efficient 
 uses of includes.
 
-=head1 STASH FUNCTION
+=head1 CLASS METHODS
 
-=head2 C<subinclude( @args )>
+=head2 C<generate_subinclude( $c, @args )>
 
 This will roughly translate to the following code:
 
   my $url = $c->uri_for( @args );
-  <!--esi <esi:include src="$url" /> -->
+  return '<!--esi <esi:include src="$url" /> -->';
 
 Notice that the stash will always be empty. This behavior could be configurable
 in the future through an additional switch - for now, this behavior guarantees a

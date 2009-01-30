@@ -2,6 +2,9 @@ package Catalyst::View::Component::SubInclude::SubRequest;
 use warnings;
 use strict;
 
+use Carp qw/croak/;
+use namespace::clean qw/croak/;
+
 =head1 NAME
 
 Catalyst::View::Component::SubInclude::SubRequest - Sub-requests plugin for C::V::Component::SubInclude
@@ -48,9 +51,9 @@ to render the subinclude contents.
 
 It requires L<Catalyst::Plugin::SubRequest>.
 
-=head1 STASH FUNCTION
+=head1 CLASS METHODS
 
-=head2 C<subinclude( $path, @args )>
+=head2 C<generate_subinclude( $c, $path, @args )>
 
 This will translate to the following sub-request call:
 

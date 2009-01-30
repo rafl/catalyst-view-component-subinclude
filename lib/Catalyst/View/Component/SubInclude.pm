@@ -72,6 +72,13 @@ Configuration file example:
       subinclude_plugin   ESI
   </View::TT>
 
+If writing your own plugin, keep in kind plugins are required to implement a 
+class method C<generate_subinclude> with the following signature:
+
+  sub generate_subinclude {
+      my ($class, $c, @args) = @_;
+  }
+
 =cut
 
 has 'subinclude_plugin' => (
