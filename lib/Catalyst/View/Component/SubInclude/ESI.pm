@@ -53,10 +53,14 @@ common interface for plugins.
 =cut
 
 sub generate_subinclude {
-    my $class = shift;
-    my $c     = shift;
-    my $url = $c->uri_for( @_ );
-    return '<!--esi <esi:include src="' . $url->path . '" /> -->';
+    my ($class, $c, $path, @params) = @_;
+
+    my $dispatcher = $c->dispatcher;
+    my ($action, $args) = $dispatcher->_invoke_as_path( $c, $path, @params );
+
+    my $uri = $c->uri_for( $action, $args );
+
+    return '<!--esi <esi:include src="' . $uri->path . '" /> -->';
 }
 
 =head1 SEE ALSO

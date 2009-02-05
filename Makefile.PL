@@ -5,7 +5,7 @@ use inc::Module::Install;
 name 'Catalyst-View-Component-SubInclude';
 all_from 'lib/Catalyst/View/Component/SubInclude.pm';
 
-requires 'Catalyst::Runtime' => '5.7014';
+requires 'Catalyst::Runtime' => '5.70000';
 requires 'Catalyst::Plugin::SubRequest';
 requires 'Moose';
 requires 'Moose::Role';
