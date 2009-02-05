@@ -71,11 +71,13 @@ sub generate_subinclude {
 
     croak "subincludes through subrequests require Catalyst::Plugin::SubRequest"
         unless $c->can('sub_request');
+
+    my $args = ref $params[0] eq 'ARRAY' ? shift @params : [];
     
     my $dispatcher = $c->dispatcher;
-    my ($action, $args) = $dispatcher->_invoke_as_path( $c, $path, @params );
+    my ($action) = $dispatcher->_invoke_as_path( $c, $path, $args );
 
-    my $uri = $c->uri_for( $action, $args );
+    my $uri = $c->uri_for( $action, $args, @params );
 
     $c->sub_request( $uri->path, $stash, @params );
 }

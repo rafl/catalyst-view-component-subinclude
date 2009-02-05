@@ -1,2 +1,3 @@
 ESI Test, will include /time_include<br/>
-[% subinclude('/time_include') %]
+[% subinclude('/time_include', { 'foo' => 'bar'} ) %]<br/>
+[% subinclude('/time_args', ['test'], { 'baz' => 'quux' }) %]<br/>

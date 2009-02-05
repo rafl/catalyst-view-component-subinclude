@@ -1,1 +1,1 @@
-Current time is: [% current_time %]
+Current time is: [% current_time %] --> [% additional %]

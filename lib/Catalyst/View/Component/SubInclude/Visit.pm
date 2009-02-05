@@ -55,9 +55,22 @@ sub generate_subinclude {
 
     croak "subincludes through visit() require Catalyst version 5.71000 or newer"
         unless $c->can('visit');
+    
+    $c->log->debug("generate subinclude: $path @params");
 
-    $c->visit( $path, @params );
-    $c->res->{body};
+    {
+        local $c->{stash} = {};
+        
+        local $c->request->{parameters} = 
+            ref $params[-1] eq 'HASH' ? pop @params : {};
+
+        local $c->response->{body};
+
+        $c->visit( $path, ( ref $params[0] eq 'ARRAY' ? shift @params : () ) );
+
+        return $c->response->{body};
+    }
+
 }
 
 =head1 SEE ALSO
