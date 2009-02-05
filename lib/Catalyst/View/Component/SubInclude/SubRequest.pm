@@ -11,11 +11,11 @@ Catalyst::View::Component::SubInclude::SubRequest - Sub-requests plugin for C::V
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -71,8 +71,13 @@ sub generate_subinclude {
 
     croak "subincludes through subrequests require Catalyst::Plugin::SubRequest"
         unless $c->can('sub_request');
+    
+    my $dispatcher = $c->dispatcher;
+    my ($action, $args) = $dispatcher->_invoke_as_path( $c, $path, @params );
 
-    $c->sub_request( $path, $stash, @params );
+    my $uri = $c->uri_for( $action, $args );
+
+    $c->sub_request( $uri->path, $stash, @params );
 }
 
 =head1 SEE ALSO

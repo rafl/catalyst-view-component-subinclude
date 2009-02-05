@@ -10,11 +10,11 @@ Catalyst::View::Component::SubInclude - Use subincludes in your Catalyst views
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -59,7 +59,8 @@ C<$path>).
 =head1 SUBINCLUDE PLUGINS
 
 The module comes with two subinclude plugins: 
-L<SubRequest|Catalyst::Plugin::View::Component::SubRequest> and 
+L<SubRequest|Catalyst::Plugin::View::Component::SubRequest>,
+L<Visit|Catalyst::Plugin::View::Component::Visit> and 
 L<ESI|Catalyst::Plugin::View::Component::ESI>.
 
 By default, the SubRequest plugin will be used. This can be changed in the 
