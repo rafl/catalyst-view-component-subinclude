@@ -1,0 +1,13 @@
+Revision history for Catalyst-View-Component-SubInclude
+
+0.03    Fri Feb  6 17:58:50 2009
+	- Add "subinclude_using"
+	- Tidy up dist (added README and this Changes file)
+
+0.02    Thu Feb  5 23:26:54 2008
+        - Fixed several issues related to Chained actions
+	- Added the Visit subinclude plugin
+
+0.01    Fri Jan 30 21:00:00 2009
+        First public version.
+

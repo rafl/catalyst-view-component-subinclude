@@ -1,0 +1,38 @@
+NAME
+    Catalyst::View::Component::SubInclude - Use subincludes in your Catalyst
+    views
+
+VERSION
+    Version 0.03
+
+DESCRIPTION
+    "Catalyst::View::Component::SubInclude" allows you to include content in
+    your templates (or, more generally, somewhere in your view's "render"
+    processing) which comes from another action in your application. It's
+    implemented as a Moose::Role, so using Moose in your view is required.
+
+    Simply put, it's a way to include the output of a Catalyst sub-request
+    somewhere in your page.
+
+    It's built in an extensible way so that you're free to use sub-requests,
+    Varnish ESI (<http://www.catalystframework.org/calendar/2008/17>) or any
+    other sub-include plugin you might want to implement. An LWP plugin
+    seems useful and might be developed in the future.
+
+SEE ALSO
+    Catalyst::Plugin::SubRequest, Moose::Role, Moose,
+    <http://www.catalystframework.org/calendar/2008/17>
+
+AUTHOR
+    Nilson Santos Figueiredo Junior, "<nilsonsfj at cpan.org>"
+
+SPONSORSHIP
+    Development sponsored by Ionzero LLC <http://www.ionzero.com/>.
+
+COPYRIGHT & LICENSE
+    Copyright (C) 2009 Nilson Santos Figueiredo Junior.
+
+    Copyright (C) 2009 Ionzero LLC.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.

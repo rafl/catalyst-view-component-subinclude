@@ -1,3 +1,4 @@
+Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -20,3 +21,4 @@ META.yml
 t/00-load.t
 t/pod-coverage.t
 t/pod.t
+README
