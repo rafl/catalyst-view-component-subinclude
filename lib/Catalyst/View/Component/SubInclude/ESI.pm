@@ -39,11 +39,13 @@ uses of includes.
 
 =head1 CLASS METHODS
 
-=head2 C<generate_subinclude( $c, @args )>
+=head2 C<generate_subinclude( $c, $path, @args )>
 
-This will roughly translate to the following code:
+Note that C<$path> should be the private action path - translation to the public
+path is handled internally. After translation, this will roughly translate to 
+the following code:
 
-  my $url = $c->uri_for( @args );
+  my $url = $c->uri_for( $translated_path, @args )->path_query;
   return '<!--esi <esi:include src="$url" /> -->';
 
 Notice that the stash will always be empty. This behavior could be configurable

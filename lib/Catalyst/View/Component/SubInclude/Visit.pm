@@ -40,13 +40,21 @@ render subinclude contents.
 
 This method is only supported when using L<Catalyst> version 5.71000 or newer.
 
+B<WARNING: As of Catalyst version 5.71000, this plugin doesn't work for chained 
+actions with captured arguments>. Apparently, C<visit> doesn't handle this type 
+of actions yet.
+
 =head1 CLASS METHODS
 
 =head2 C<generate_subinclude( $c, $path, @args )>
 
-This will translate to the following call:
+This is (roughly) equivalent to the following call:
 
   $c->visit( $path, @args );
+
+But it will handle all the nasty details such as localizing the stash, 
+parameters and response body. This is necessary to keep behavior consistent 
+with the other plugins.
 
 =cut
 

@@ -55,13 +55,17 @@ It requires L<Catalyst::Plugin::SubRequest>.
 
 =head2 C<generate_subinclude( $c, $path, @args )>
 
-This will translate to the following sub-request call:
+This will make a sub-request call to the action specified by C<$path>. Note that
+C<$path> should be the private action path - translation to the public path is
+handled internally.
 
-  $c->sub_request( $path, {}, @args );
+So, after path translation, the call will be (roughly) equivalent to:
+
+  $c->sub_request( $translated_path, {}, @args );
 
 Notice that the stash will always be empty. This behavior could be configurable
 in the future through an additional switch - for now, this behavior guarantees a
-common interface for plugins.
+common interface for all plugins.
 
 =cut
 
