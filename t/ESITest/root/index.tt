@@ -1,3 +1,9 @@
-ESI Test, will include /time_include<br/>
+SubInclude test: will include /time_include using default plugin [% c.view('TT').subinclude_plugin %]<br/>
 [% subinclude('/time_include', { 'foo' => 'bar'} ) %]<br/>
 [% subinclude('/time_args', ['test'], { 'baz' => 'quux' }) %]<br/>
+
+<br/><br/>
+Test subinclude using specific plugins:<br/>
+[% subinclude_using('SubRequest', '/time_include', { 'plugin' => 'SubRequest'} ) %]<br/>
+[% subinclude_using('Visit', '/time_include', { 'plugin' => 'Visit'} ) %]<br/>
+[% subinclude_using('ESI', '/time_include', { 'plugin' => 'ESI'} ) %]<br/>
