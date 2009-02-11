@@ -3,7 +3,7 @@ NAME
     views
 
 VERSION
-    Version 0.03
+    Version 0.04
 
 DESCRIPTION
     "Catalyst::View::Component::SubInclude" allows you to include content in
