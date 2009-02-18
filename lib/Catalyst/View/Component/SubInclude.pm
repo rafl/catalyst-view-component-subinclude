@@ -2,7 +2,7 @@ package Catalyst::View::Component::SubInclude;
 use Moose::Role;
 
 use Carp qw/croak/;
-use namespace::clean qw/croak/;
+use namespace::clean;
 
 =head1 NAME
 
