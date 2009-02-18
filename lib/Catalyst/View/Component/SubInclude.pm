@@ -1,7 +1,7 @@
 package Catalyst::View::Component::SubInclude;
 use Moose::Role;
 
-use Carp qw/croak/;
+use Class::MOP;
 use namespace::clean;
 
 =head1 NAME
@@ -155,9 +155,8 @@ sub _subinclude_plugin_class_name {
     return $plugin if $plugin =~ /^$pkg/;
 
     my $class_name = __PACKAGE__ . '::' . $plugin;
-    
-    eval "require $class_name";
-    croak "Error requiring $class_name: $@" if $@;
+
+    Class::MOP::load_class($class_name);
 
     $class_name;
 }
